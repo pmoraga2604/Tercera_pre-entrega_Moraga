@@ -1,0 +1,38 @@
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <table id="pelis_list_table" style="border-color: black;">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>titulo</th>
+                <th>genero</th>
+                <th>año</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {%if peliculas_context%}
+            {%for peli in peliculas_context%}
+            <tr>
+                <td>{{peli.id}}</td>
+                <td>{{peli.titulo}}</td>
+                <td>{{peli.genero}}</td>
+                <td>{{peli.year}}</td>
+
+            </tr>
+            {%endfor%}
+    
+            {%else%}
+                <h1>No hay registros de peliculas</h1>
+            {%endif%}
+        </tbody>
+    </table>
+    </body>
+</html>
+
+    
